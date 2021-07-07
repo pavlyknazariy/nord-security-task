@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_to_do_list"
+    android:id="@+id/navigation">
+
+    <fragment
+        android:id="@+id/fragment_to_do_list"
+        android:name="com.destro13.nord_task.screens.todo.ToDoListFragment"
+        tools:layout="@layout/fragment_to_do_list">
+
+        <action
+            android:id="@+id/open_details"
+            app:destination="@id/fragment_details"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_details"
+        android:name="com.destro13.nord_task.screens.details.DetailsFragment"
+        tools:layout="@layout/fragment_details">
+
+        <argument
+            android:name="task"
+            app:argType="com.destro13.nord_task.model.Task" />
+    </fragment>
+</navigation>

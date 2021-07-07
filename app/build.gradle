@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.destro13.nord_task"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "API_URL", '"https://gorest.co.in/"'
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.kotlin.coroutines"
+
+    implementation "com.squareup.okhttp3:okhttp:$versions.squareup.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.squareup.okhttp"
+    implementation "com.squareup.retrofit2:retrofit:$versions.squareup.retrofit2"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.squareup.retrofit2"
+
+    implementation "com.google.code.gson:gson:$versions.google.gson"
+
+    implementation "com.google.android.material:material:$versions.android.material"
+
+    implementation "androidx.core:core-ktx:$versions.androidx.core"
+    implementation "androidx.activity:activity-ktx:$versions.androidx.activity"
+    implementation "androidx.fragment:fragment-ktx:$versions.androidx.fragment"
+    implementation "androidx.appcompat:appcompat:$versions.androidx.appcompat"
+    implementation "androidx.legacy:legacy-support-v4:$versions.androidx.legacy"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.androidx.constraintLayout"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.androidx.navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.androidx.navigation"
+
+    implementation "androidx.lifecycle:lifecycle-process:$versions.androidx.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.androidx.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.androidx.lifecycle"
+
+    implementation "com.google.dagger:hilt-android:$versions.google.hilt"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    kapt "com.google.dagger:hilt-android-compiler:$versions.google.hilt"
+
+    implementation "com.github.bumptech.glide:glide:$versions.bumptech.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$versions.bumptech.glide"
+
+    implementation "androidx.room:room-runtime:$versions.androidx.room"
+    implementation "androidx.room:room-ktx:$versions.androidx.room"
+    kapt  "androidx.room:room-compiler:$versions.androidx.room"
+
+    implementation "com.jakewharton.timber:timber:$versions.jakewharton.timber"
+
+    testImplementation "junit:junit:$versions.test.junit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.test.androidXTestExtJunit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.test.espresso"
+}

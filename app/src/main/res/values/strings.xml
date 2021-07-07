@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NordSecurityTask</string>
+    <string name="show_more"><![CDATA[Show more >]]></string>
+    <string name="last_updated">Last updated:</string>
+    <string name="state">State:</string>
+    <string name="completed">Completed</string>
+    <string name="uncompleted">Uncompleted</string>
+</resources>
